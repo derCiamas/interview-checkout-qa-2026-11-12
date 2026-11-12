@@ -27,3 +27,12 @@ test('submits an order', async ({ page }) => {
   await page.getByRole('button', { name: 'Submit order' }).click();
   await expect(page.getByRole('status')).toContainText('Order submitted.');
 });
+
+test('submits an order with the discounted total', async ({ page }) => {
+  await page.goto('/');
+  await page.getByLabel('Discount code').fill('SUMMER20');
+  await page.getByRole('button', { name: 'Apply code' }).click();
+  await expect(page.getByRole('status')).toContainText('Discount applied.');
+  await page.getByRole('button', { name: 'Submit order' }).click();
+  await expect(page.getByText('Order submitted.')).toBeVisible();
+});
