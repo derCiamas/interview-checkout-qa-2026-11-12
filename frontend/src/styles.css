@@ -1,0 +1,6 @@
+body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 32rem; padding: 0 1rem; }
+label { display: block; margin-top: 1rem; }
+input { display: block; padding: .5rem; margin: .4rem 0; }
+button { padding: .5rem .8rem; margin: .5rem .5rem .5rem 0; }
+dl { display: grid; grid-template-columns: 1fr auto; gap: .5rem; }
+dd { margin: 0; }
